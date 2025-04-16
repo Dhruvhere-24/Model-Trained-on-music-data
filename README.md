@@ -1,66 +1,69 @@
-🎧 Predicting Track Popularity Using Audio Features
-This project explores the prediction of song popularity using machine learning regression models. Leveraging Spotify-style audio features, we aim to build a robust model that can estimate a track's popularity score.
+# 🎧 Predicting Track Popularity Using Audio Features
 
-📊 Objective
-The goal is to train supervised regression models that predict track_popularity based on meaningful audio features such as:
+This project explores the use of machine learning regression models to predict the popularity of songs using Spotify-style audio features.
 
-release_year
+---
 
-loudness
+## 📊 Objective
 
-speechiness
+The goal is to build supervised regression models that estimate **track popularity** based on selected audio features. These features were chosen after exploratory data analysis, including correlation checks and scatter plots:
 
-instrumentalness
+- **release_year**
+- **loudness**
+- **speechiness**
+- **instrumentalness**
+- **acousticness**
 
-acousticness
+---
 
-These features were selected after exploratory data analysis, including correlation checks and scatter plots.
+## 🧪 Workflow
 
-🧪 Workflow
-Data Preprocessing
+### 1. Data Preprocessing
+- Loaded and cleaned a dataset of **21,000+ songs**
+- Removed irrelevant columns and handled missing values
+- Selected key features based on correlation and visualization
 
-Loaded and cleaned a dataset of 21,000+ songs.
+### 2. Model Training
+Implemented and compared several regression models using `scikit-learn`:
 
-Removed unnecessary columns and handled missing values.
+- **Linear Regression**
+- **Random Forest Regressor**
+- **Gradient Boosting Regressor**
+- *(Optional)* Ridge, Lasso, K-Nearest Neighbors (KNN)
 
-Selected key features based on visual and statistical correlation with track_popularity.
+All models were evaluated using **Root Mean Squared Error (RMSE)**.
 
-Model Training
+### 3. Model Evaluation
+- Used `test.csv` as a real-world test set
+- Compared **actual vs. predicted** popularity scores
+- Visualized results with **scatter plots** and **error metrics**
 
-Applied multiple regression models:
+---
 
-Linear Regression
+## 🧠 Key Results
 
-Random Forest Regressor
+- **Random Forest** and **Gradient Boosting** outperformed Linear Regression
+- RMSE metrics confirmed higher accuracy of ensemble models
+- Visualizations showed consistent and reliable predictions
 
-Gradient Boosting Regressor
+---
 
-Ridge, Lasso, KNN (optional)
+## 📁 Files Included
 
-Tuned models using scikit-learn defaults and evaluated with RMSE (Root Mean Squared Error).
+- `train.csv` – Training data with full audio features  
+- `test.csv` – Real-world test set for evaluation  
+- `modeling.ipynb` – Jupyter notebook with code for EDA, modeling, and evaluation  
+- `README.md` – Project overview and explanation (this file)
 
-Evaluation
-
-Used a separate test.csv file as a real-world test set.
-
-Compared actual vs predicted values.
-
-Visualized performance with scatter plots and error metrics.
-
-🧠 Key Results
-Models were evaluated using RMSE.
-
-Random Forest and Gradient Boosting showed better performance over simple Linear Regression.
-
-Visualizations demonstrated reasonable prediction accuracy and consistency.
-
-📁 Files Included
-train.csv – Training data with full audio features.
-
-test.csv – Real-world test set for final evaluation.
-
-modeling.ipynb – Jupyter notebook with code for EDA, modeling, and evaluation.
-
-README.md – Project overview and explanation (this file).
+---
 
 
+## 🛠️ Tech Stack
+
+- Python  
+- Pandas, NumPy  
+- Scikit-learn  
+- Matplotlib, Seaborn  
+- Jupyter Notebook  
+
+---
